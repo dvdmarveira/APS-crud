@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const connectDB = require("./config/database");
 const userRoutes = require("./routes/userRoutes");
+const disciplineRoutes = require("./routes/disciplineRoutes");
 
 // Carregar variáveis de ambiente
 dotenv.config();
@@ -20,6 +21,7 @@ app.use(morgan("dev")); // Logger
 
 // Rotas
 app.use("/api/users", userRoutes);
+app.use("/api/disciplines", disciplineRoutes);
 
 // Porta
 const PORT = process.env.PORT || 5000;
